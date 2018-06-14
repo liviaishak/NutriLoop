@@ -1,3 +1,5 @@
+<h3>Please fill out the information below in order for you to track your daily nutrients intake.</h3>
+
 <%= form_for @user do |f| %>
   <div class="form-group">
     <%= f.label :fname, "First Name" %>
@@ -14,7 +16,7 @@
   <div class="form-group">
     <%= f.label :gender, "Gender" %> <br>
     <%= f.radio_button :gender, 'male' %>
-    <%= f.label :gender_male, "Male" %> 
+    <%= f.label :gender_male, "Male" %>
     <%= f.radio_button :gender, 'female' %>
     <%= f.label :gender_female, "Female" %>
   </div>
