@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20180613015427) do
     t.integer "age"
     t.integer "weight"
     t.integer "height"
+    t.string "physical_activity"
+    t.string "physical_activity_none"
+    t.string "physical_activity_light"
+    t.string "physical_activity_mod"
+    t.string "physical_activity_very_active"
+    t.integer "carb"
+    t.integer "protein"
+    t.integer "fat"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

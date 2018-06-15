@@ -11,6 +11,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.integer :age
       t.integer :weight
       t.integer :height
+      t.string :physical_activity
+      t.string :physical_activity_none
+      t.string :physical_activity_light
+      t.string :physical_activity_mod
+      t.string :physical_activity_very_active
+      t.integer :carb
+      t.integer :protein
+      t.integer :fat
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
