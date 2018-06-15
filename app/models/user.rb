@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_one :profile
+
+  validates :fname, :lname, :age, :gender, :height, :weight, :physical_activity, presence: true
 end

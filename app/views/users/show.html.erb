@@ -13,23 +13,23 @@
 <% formula_female = ((@user.weight * 4.35) + (@user.height * 4.7) - (@user.age * 4.7) + 655) %>
 <% formula_male = ((@user.weight * 6.23) + (@user.height * 12.7) - (@user.age * 6.8) + 66) %>
 
-<% if @user.gender_female && @user.physical_activity_none %>
+<% if @user.gender == "female" && @user.physical_activity == "none" %>
   <% total_cal = formula_female * 1.2 %>
-<% elsif @user.gender_female && @user.physical_activity_light %>
+<% elsif @user.gender == "female" && @user.physical_activity = "light" %>
   <% total_cal = formula_female * 1.375 %>
-<% elsif @user.gender_female && @user.physical_activity_mod %>
+<% elsif @user.gender == "female" && @user.physical_activity = "moderate" %>
   <% total_cal = formula_female * 1.55 %>
-<% elsif @user.gender_female && @user.physical_activity_very_active %>
+<% elsif @user.gender == "female" && @user.physical_activity = "active" %>
   <% total_cal = formula_female * 1.725 %>
 
-<% elsif @user.gender_male && @user.physical_activity_none %>
+<% elsif @user.gender == "male" && @user.physical_activity == "none" %>
   <% total_cal = formula_male * 1.2 %>
-<% elsif @user.gender_male && @user.physical_activity_light %>
+<% elsif @user.gender == "male" && @user.physical_activity = "light" %>
   <% total_cal = formula_male * 1.375 %>
-<% elsif @user.gender_male && @user.physical_activity_mod %>
+<% elsif @user.gender == "male" && @user.physical_activity = "moderate" %>
   <% total_cal = formula_male * 1.55 %>
-<% elsif @user.gender_male && @user.physical_activity_very_active %>
+<% else @user.gender == "male" && @user.physical_activity = "active" %>
   <% total_cal = formula_male * 1.725 %>
 <% end %>
 
-<h4> Your total daily calories intake: <%= total_cal %> </h4>
+<h4> Your total daily calories intake: <%= total_cal.to_d %> </h4>
