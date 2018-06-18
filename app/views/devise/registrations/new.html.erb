@@ -20,6 +20,45 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  <br>
+    <div class="field">
+      <%= f.label :fname, "First Name" %>
+      <%= f.text_field :fname, class: 'form-control', placeholder: "Enter first name" %>
+    </div>
+    <div class="field">
+      <%= f.label :lname, "Last Name" %>
+      <%= f.text_field :lname, class: 'form-control', placeholder: "Enter last name" %>
+    </div>
+    <div class="field">
+      <%= f.label :age %>
+      <%= f.number_field :age, class: 'form-control', placeholder: "Enter your age" %>
+    </div>
+    <div class="field">
+      <%= f.label :gender, "Gender" %> <br>
+      <%= f.radio_button :gender, "male" %>
+      <%= f.label :gender_male, "Male" %> &nbsp;
+      <%= f.radio_button :gender, "female" %>
+      <%= f.label :gender_female, "Female" %>
+    </div>
+    <div class="field">
+      <%= f.label :height, "Height (in.)" %>
+      <%= f.text_field :height, class: 'form-control', placeholder: "Enter your height" %>
+    </div>
+    <div class="field">
+      <%= f.label :weight, "Weight (lbs.)" %>
+      <%= f.text_field :weight, class: 'form-control', placeholder: "Enter your weight" %>
+    </div>
+    <div class="field">
+      <%= f.label :physical_activity %> <br>
+      <%= f.radio_button :physical_activity, "none" %>
+      <%= f.label :physical_activity_none, "None" %> &nbsp;
+      <%= f.radio_button :physical_activity, "light" %>
+      <%= f.label :physical_activity_light, "Light (1 - 2 days/week)" %> &nbsp;
+      <%= f.radio_button :physical_activity, "moderate" %>
+      <%= f.label :physical_activity_mod, "Moderate (3 -5 days/week)" %> &nbsp;
+      <%= f.radio_button :physical_activity, "active" %>
+      <%= f.label :physical_activity_very_active, "Very active (Daily)" %>
+    </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

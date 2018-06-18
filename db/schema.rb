@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180613015427) do
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "fname"
-    t.string "lname"
-    t.integer "age"
-    t.integer "weight"
-    t.integer "height"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 20180609233056) do
 
   create_table "users", force: :cascade do |t|
     t.string "fname"
@@ -51,10 +39,6 @@ ActiveRecord::Schema.define(version: 20180613015427) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
