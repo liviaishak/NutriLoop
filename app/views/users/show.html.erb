@@ -8,4 +8,9 @@
 <h4> Your total daily calories intake: <%= @user.total_cal.to_d %> calories </h4>
 <p> Total Carbohydrates : <%= @user.total_cal.to_d * 0.5 %> calories </p>
 <p>Total Proteins : <%= @user.total_cal.to_d * 0.2 %> calories </p>
-<p>Total Fat : <%= @user.total_cal.to_d * 0.3 %> calories </p>
+<p>Total Fats : <%= @user.total_cal.to_d * 0.3 %> calories </p>
+
+<br>
+<div class "row">
+  <%= column_chart @user.total_cal %>
+</div>
