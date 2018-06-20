@@ -16,6 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :physical_activity_light
       t.string :physical_activity_mod
       t.string :physical_activity_very_active
+      t.integer :total_calories
       t.integer :carb
       t.integer :protein
       t.integer :fat

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180609233056) do
     t.string "physical_activity_light"
     t.string "physical_activity_mod"
     t.string "physical_activity_very_active"
+    t.integer "total_calories"
     t.integer "carb"
     t.integer "protein"
     t.integer "fat"
