@@ -12,34 +12,41 @@ class User < ApplicationRecord
       formula_male = (((weight * 6.23) + (height * 12.7)) - (age * 6.8)) + 66
 
       if gender == "female" && physical_activity == "none"
-        (formula_female * 1.2).to_d
+        @total_cal = (formula_female * 1.2).to_d
       elsif gender == "female" && physical_activity == "light"
-        (formula_female * 1.375).to_d
+        @total_cal = (formula_female * 1.375).to_d
       elsif gender == "female" && physical_activity == "moderate"
-        (formula_female * 1.55).to_d
+        @total_cal = (formula_female * 1.55).to_d
       elsif gender == "female" && physical_activity == "active"
-        (formula_female * 1.725).to_d
+        @total_cal = (formula_female * 1.725).to_d
 
       elsif gender == "male" && physical_activity == "none"
-        (formula_male * 1.2).to_d
+        @total_cal = (formula_male * 1.2).to_d
       elsif gender == "male" && physical_activity == "light"
-        (formula_male * 1.375).to_d
+        @total_cal = (formula_male * 1.375).to_d
       elsif gender == "male" && physical_activity == "moderate"
-        (formula_male * 1.55).to_d
+        @total_cal = (formula_male * 1.55).to_d
       else gender == "male" && physical_activity == "active"
-        (formula_male * 1.725).to_d
+        @total_cal = (formula_male * 1.725).to_d
       end
+      @total_cal
    end
 
    def total_carbs
-     self.total_cal * 0.5
+     tot_carb = @total_cal * 0.5
+     self.update_attributes(:carb => tot_carb)
+     carb
    end
 
    def total_proteins
-     self.total_cal * 0.2
+     tot_prot = @total_cal * 0.2
+     self.update_attributes(:protein => tot_prot)
+     protein
    end
 
    def total_fats
-     self.total_cal * 0.3
+     tot_fat = @total_cal * 0.3
+     self.update_attributes(:fat => tot_fat)
+     fat
    end
 end
