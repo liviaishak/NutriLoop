@@ -7,40 +7,14 @@
 
 <div class="row">
   <h4> Your total daily calories intake: <%= @user.total_cal %> calories </h4>
-  <p> Total Carbohydrates : <%= @user.carb%> calories </p>
-  <p> Total Proteins : <%= @user.protein %> calories </p>
-  <p> Total Fats : <%= @user.fat %> calories </p>
+  <p> Total Carbohydrates : <%= @user.total_carbs %> calories </p>
+  <p> Total Proteins : <%= @user.total_proteins %> calories </p>
+  <p> Total Fats : <%= @user.total_fats %> calories </p>
 </div>
 
 <br>
 
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Type of nutrients', 'Total calories'],
-          ['Carbohydrates',     11],
-          ['Proteins',      2],
-          ['Fats',    7]
-        ]);
-
-        var options = {
-          title: 'My Nutrients intake'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
+<div class="graph">
+  <h3>Macronutrients/calories</h3>
+  <%= bar_chart({"Carbohydrates" => @user.carb, "Proteins" => @user.protein, "Fats" => @user.fat}) %>
+</div>
