@@ -14,6 +14,6 @@ NutriLoop is a lifestyle app. An app where you get to track your daily nutrients
 <p>Bcrypt for password encryption(gem)</p>
 <p>Sendgrid for mailing services</p>
 
-[Click here to see it action!](https://nutriloop.herokuapp.com/ "NutriLoop's Homepage") 
+[Click here to see it in action!](https://nutriloop.herokuapp.com/ "NutriLoop's Homepage") 
 
 
